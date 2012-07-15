@@ -32,7 +32,7 @@
 
 #import "SPPlaylistContainer.h"
 #import "SPPlaylistFolder.h"
-#import "SPUser.h"
+#import "SPSPUser.h"
 #import "SPSession.h"
 #import "SPPlaylist.h"
 #import "SPErrorExtensions.h"
@@ -54,7 +54,7 @@
 
 -(NSArray *)createPlaylistTree;
 
-@property (nonatomic, readwrite, strong) SPUser *owner;
+@property (nonatomic, readwrite, strong) SPSPUser *owner;
 @property (nonatomic, readwrite, assign) __unsafe_unretained SPSession *session;
 @property (nonatomic, readwrite, getter=isLoaded) BOOL loaded;
 @property (nonatomic, readwrite, strong) NSArray *playlists;
@@ -128,7 +128,7 @@ static void container_loaded(sp_playlistcontainer *pc, void *userdata) {
 	SPPlaylistContainer *container = proxy.container;
 	if (!container) return;
 	
-	SPUser *user = [SPUser userWithUserStruct:sp_playlistcontainer_owner(container.container) inSession:container.session];
+	SPSPUser *user = [SPSPUser userWithUserStruct:sp_playlistcontainer_owner(container.container) inSession:container.session];
 	NSArray *newTree = [container createPlaylistTree];
 	
 	dispatch_async(dispatch_get_main_queue(), ^() {
@@ -182,11 +182,11 @@ static sp_playlistcontainer_callbacks playlistcontainer_callbacks = {
         sp_playlistcontainer_add_callbacks(self.container, &playlistcontainer_callbacks, (__bridge void *)(self.callbackProxy));
 		
 		NSArray *newTree = [self createPlaylistTree];
-		SPUser *user = nil;
+		SPSPUser *user = nil;
 		BOOL isLoaded = sp_playlistcontainer_is_loaded(self.container);
 		
 		if (isLoaded)
-			user = [SPUser userWithUserStruct:sp_playlistcontainer_owner(self.container) inSession:self.session];
+			user = [SPSPUser userWithUserStruct:sp_playlistcontainer_owner(self.container) inSession:self.session];
 		
 		dispatch_async(dispatch_get_main_queue(), ^() {
 			self.owner = user;

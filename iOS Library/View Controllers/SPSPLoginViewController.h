@@ -34,7 +34,7 @@
 #import "CocoaLibSpotify.h"
 #import "SPSignupViewController.h"
 
-@class SPLoginViewController;
+@class SPSPLoginViewController;
 
 /**
  Provides a completion callback from SPLoginViewController. SPLoginViewController
@@ -48,7 +48,7 @@
  @param controller The SPLoginViewController instance that generated the message.
  @param didLogin `YES` if the user successfully logged in, otherwise `NO`..
  */
--(void)loginViewController:(SPLoginViewController *)controller didCompleteSuccessfully:(BOOL)didLogin;
+-(void)loginViewController:(SPSPLoginViewController *)controller didCompleteSuccessfully:(BOOL)didLogin;
 
 @end
 
@@ -62,7 +62,7 @@
  then login directly next time using the saved credentias instead of using this view controller.
  If login fails, display the appropriate error and you can then show this view controller for logging in manually again if needed.
  */
-@interface SPLoginViewController : UINavigationController <SPSignupPageDelegate> {
+@interface SPSPLoginViewController : UINavigationController <SPSignupPageDelegate> {
 	SPSession *session;
 	BOOL waitingForFacebookPermissions;
 	id <SPLoginViewControllerDelegate> __unsafe_unretained loginDelegate;
@@ -73,7 +73,7 @@
  @param session The session to create the SPLoginViewController instance for.
  @return The created SPLoginViewController instance.
  */
-+(SPLoginViewController *)loginControllerForSession:(SPSession *)session;
++(SPSPLoginViewController *)loginControllerForSession:(SPSession *)session;
 
 /** Returns whether the view controller allows the user to cancel the login process or not. Defaults to `YES`. */
 @property (nonatomic, readwrite) BOOL allowsCancel;

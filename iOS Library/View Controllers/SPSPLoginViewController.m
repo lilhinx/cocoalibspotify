@@ -30,14 +30,14 @@
  ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-#import "SPLoginViewController.h"
+#import "SPSPLoginViewController.h"
 #import "SPLoginLogicViewController.h"
 #import "SPFacebookPermissionsViewController.h"
 #import "SPLicenseViewController.h"
 #import "SPLoginViewControllerInternal.h"
 #import "SPClientUpsellViewController.h"
 
-@interface SPLoginViewController ()
+@interface SPSPLoginViewController ()
 
 -(id)initWithSession:(SPSession *)aSession;
 -(void)showIfNeeded;
@@ -50,11 +50,11 @@
 
 @end
 
-@implementation SPLoginViewController
+@implementation SPSPLoginViewController
 
 static NSMutableDictionary *loginControllerCache;
 
-+(SPLoginViewController *)loginControllerForSession:(SPSession *)session {
++(SPSPLoginViewController *)loginControllerForSession:(SPSession *)session {
 	
 	if (session == nil) return nil;
 	
@@ -63,10 +63,10 @@ static NSMutableDictionary *loginControllerCache;
 		
 	NSValue *ptrValue = [NSValue valueWithPointer:(const void *)session];
 	
-	SPLoginViewController *controller = [loginControllerCache objectForKey:ptrValue];
+	SPSPLoginViewController *controller = [loginControllerCache objectForKey:ptrValue];
 	
 	if (controller == nil) {
-		controller = [[SPLoginViewController alloc] initWithSession:session];
+		controller = [[SPSPLoginViewController alloc] initWithSession:session];
 		[loginControllerCache setObject:controller forKey:ptrValue];
 	}
 	
@@ -264,7 +264,7 @@ static NSMutableDictionary *loginControllerCache;
 
 @end
 
-@implementation SPLoginViewController (SPLoginViewControllerInternal)
+@implementation SPSPLoginViewController (SPLoginViewControllerInternal)
 
 -(void)dismissLoginView:(BOOL)success {
 	

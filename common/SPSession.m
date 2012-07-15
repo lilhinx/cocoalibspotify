@@ -35,7 +35,7 @@
 #import "SPTrack.h"
 #import "SPTrackInternal.h"
 #import "SPPlaylistContainer.h"
-#import "SPUser.h"
+#import "SPSPUser.h"
 #import "SPAlbum.h"
 #import "SPArtist.h"
 #import "SPPlaylist.h"
@@ -57,7 +57,7 @@
 
 @interface SPSession ()
 
-@property (nonatomic, readwrite, strong) SPUser *user;
+@property (nonatomic, readwrite, strong) SPSPUser *user;
 @property (nonatomic, readwrite, strong) NSLocale *locale;
 
 @property (nonatomic, readwrite) sp_connectionstate connectionState;
@@ -516,7 +516,7 @@ static void private_session_mode_changed(sp_session *session, bool is_private) {
 
 #if TARGET_OS_IPHONE
 
-#import "SPLoginViewController.h"
+#import "SPSPLoginViewController.h"
 #import "SPLoginViewControllerInternal.h"
 
 static void show_signup_page(sp_session *session, sp_signup_page page, bool pageIsLoading, int featureMask, const char *recentUserName) {
@@ -524,7 +524,7 @@ static void show_signup_page(sp_session *session, sp_signup_page page, bool page
 	SPSession *sess = (__bridge SPSession *)sp_session_userdata(session);
 	@autoreleasepool {
 		dispatch_async(dispatch_get_main_queue(), ^{
-			[[SPLoginViewController loginControllerForSession:sess] handleShowSignupPage:page
+			[[SPSPLoginViewController loginControllerForSession:sess] handleShowSignupPage:page
 																				 loading:pageIsLoading
 																			 featureMask:featureMask
 																		  recentUserName:[NSString stringWithUTF8String:recentUserName]];
@@ -537,7 +537,7 @@ static void show_signup_error_page(sp_session *session, sp_signup_page page, sp_
 	SPSession *sess = (__bridge SPSession *)sp_session_userdata(session);
 	@autoreleasepool {
 		dispatch_async(dispatch_get_main_queue(), ^{
-			[[SPLoginViewController loginControllerForSession:sess] handleShowSignupErrorPage:page
+			[[SPSPLoginViewController loginControllerForSession:sess] handleShowSignupErrorPage:page
 																						error:[NSError spotifyErrorWithCode:error]];
 		});
 	}
@@ -552,7 +552,7 @@ static void connect_to_facebook(sp_session *session, const char **permissions, i
 			[permissionStrs addObject:[NSString stringWithUTF8String:permissions[i]]];
 		
 		dispatch_async(dispatch_get_main_queue(), ^{
-			[[SPLoginViewController loginControllerForSession:sess] handleConnectToFacebookWithPermissions:permissionStrs];
+			[[SPSPLoginViewController loginControllerForSession:sess] handleConnectToFacebookWithPermissions:permissionStrs];
 		});
 	}
 }
@@ -948,7 +948,7 @@ static SPSession *sharedSession;
                 
 				dispatch_async([SPSession libSpotifyQueue], ^() {
 					sp_user *userStruct = sp_session_user(self.session);
-					SPUser *newUser = [SPUser userWithUserStruct:userStruct inSession:self];
+					SPSPUser *newUser = [SPSPUser userWithUserStruct:userStruct inSession:self];
 					dispatch_async(dispatch_get_main_queue(), ^() { self.user = newUser; });
 				});
 				
@@ -1140,19 +1140,19 @@ static SPSession *sharedSession;
     return cachedTrack;
 }
 
--(SPUser *)userForUserStruct:(sp_user *)spUser {
+-(SPSPUser *)userForUserStruct:(sp_user *)spUser {
     // WARNING: This MUST be called on the LibSpotify worker queue.
     
 	NSAssert(dispatch_get_current_queue() == [SPSession libSpotifyQueue], @"Not on correct queue!");
 	
     NSValue *ptrValue = [NSValue valueWithPointer:spUser];
-	SPUser *cachedUser = [self.userCache objectForKey:ptrValue];
+	SPSPUser *cachedUser = [self.userCache objectForKey:ptrValue];
     
     if (cachedUser != nil) {
         return cachedUser;
     }
 	
-	cachedUser = [[SPUser alloc] initWithUserStruct:spUser
+	cachedUser = [[SPSPUser alloc] initWithUserStruct:spUser
 										  inSession:self];
     
 	if (cachedUser != nil)
@@ -1227,7 +1227,7 @@ static SPSession *sharedSession;
 	});
 }
 
--(void)userForURL:(NSURL *)url callback:(void (^)(SPUser *user))block {
+-(void)userForURL:(NSURL *)url callback:(void (^)(SPSPUser *user))block {
 	
 	if ([url spotifyLinkType] != SP_LINKTYPE_PROFILE) {
 		if (block) block(nil);
@@ -1235,7 +1235,7 @@ static SPSession *sharedSession;
 	}
 	
 	dispatch_async([SPSession libSpotifyQueue], ^{
-		SPUser *userObj = nil;
+		SPSPUser *userObj = nil;
 		sp_link *link = [url createSpotifyLink];
 		if (link != NULL) {
 			sp_user *aUser = sp_link_as_user(link);
@@ -1311,7 +1311,7 @@ static SPSession *sharedSession;
 		[self playlistForURL:aSpotifyUrlOfSomeKind callback:^(SPPlaylist *playlist) { block(linkType, playlist); }];
 	
 	else if (linkType == SP_LINKTYPE_PROFILE)
-		[self userForURL:aSpotifyUrlOfSomeKind callback:^(SPUser *createdUser) { block(linkType, createdUser); }];
+		[self userForURL:aSpotifyUrlOfSomeKind callback:^(SPSPUser *createdUser) { block(linkType, createdUser); }];
 	
 	else if (linkType == SP_LINKTYPE_STARRED)
 		block(linkType, self.starredPlaylist);

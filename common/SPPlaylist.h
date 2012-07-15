@@ -35,7 +35,7 @@ ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #import <Foundation/Foundation.h>
 #import "CocoaLibSpotifyPlatformImports.h"
 
-@class SPUser;
+@class SPSPUser;
 @class SPImage;
 @class SPSession;
 @protocol SPPlaylistDelegate;
@@ -131,7 +131,7 @@ ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 @property (nonatomic, readonly) sp_playlist_offline_status offlineStatus;
 
 /** Returns the owner of the playlist, or `nil` if the playlist hasn't loaded yet. */
-@property (nonatomic, readonly, strong) SPUser *owner;
+@property (nonatomic, readonly, strong) SPSPUser *owner;
 
 /** Returns the opaque structure used by the C LibSpotify API. 
  

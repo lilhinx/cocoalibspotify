@@ -36,7 +36,7 @@ ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #import "SPTrack.h"
 #import "SPTrackInternal.h"
 #import "SPImage.h"
-#import "SPUser.h"
+#import "SPSPUser.h"
 #import "SPURLExtensions.h"
 #import "SPErrorExtensions.h"
 #import "SPPlaylistItem.h"
@@ -60,7 +60,7 @@ ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 @property (nonatomic, readwrite, copy) NSString *playlistDescription;
 @property (nonatomic, readwrite, copy) NSURL *spotifyURL;
 @property (nonatomic, readwrite, strong) SPImage *image;
-@property (nonatomic, readwrite, strong) SPUser *owner;
+@property (nonatomic, readwrite, strong) SPSPUser *owner;
 @property (nonatomic, readwrite, strong) NSArray *subscribers;
 @property (nonatomic, readwrite) float offlineDownloadProgress;
 @property (nonatomic, readwrite) sp_playlist_offline_status offlineStatus;
@@ -306,7 +306,7 @@ static void	track_created_changed(sp_playlist *pl, int position, sp_user *user, 
 	SPPlaylist *playlist = proxy.playlist;
 	if (!playlist) return;
 	
-	SPUser *spUser = [SPUser userWithUserStruct:user inSession:playlist.session];
+	SPSPUser *spUser = [SPSPUser userWithUserStruct:user inSession:playlist.session];
 	
 	dispatch_async(dispatch_get_main_queue(), ^{
 		SPPlaylistItem *item = [playlist.items objectAtIndex:position];
@@ -530,7 +530,7 @@ static NSString * const kSPPlaylistKVOContext = @"kSPPlaylistKVOContext";
 		NSString *newName = nil;
 		NSString *newDesc = nil;
 		SPImage *newImage = nil;
-		SPUser *newOwner = nil;
+		SPSPUser *newOwner = nil;
 		BOOL newCollaborative = NO;
 		BOOL newHasPendingChanges = NO;
 		
@@ -553,7 +553,7 @@ static NSString * const kSPPlaylistKVOContext = @"kSPPlaylistKVOContext";
 			newImage = [SPImage imageWithImageId:imageId inSession:self.session];
 		}
 		
-		newOwner = [SPUser userWithUserStruct:sp_playlist_owner(self.playlist) inSession:self.session];
+		newOwner = [SPSPUser userWithUserStruct:sp_playlist_owner(self.playlist) inSession:self.session];
 		newCollaborative = sp_playlist_is_collaborative(self.playlist);
 		newHasPendingChanges = sp_playlist_has_pending_changes(self.playlist);
 		NSArray *newItems = [self playlistSnapshot];

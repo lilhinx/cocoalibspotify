@@ -28,7 +28,7 @@
 #import "SPPlaylistItem.h"
 #import "SPPlaylist.h"
 #import "SPSession.h"
-#import "SPUser.h"
+#import "SPSPUser.h"
 #import "SPTrack.h"
 #import "SPURLExtensions.h"
 
@@ -36,7 +36,7 @@
 
 @property (nonatomic, readwrite, strong) id <SPPlaylistableItem, SPAsyncLoading> item;
 @property (nonatomic, readwrite, copy) NSDate *dateAdded;
-@property (nonatomic, readwrite, strong) SPUser *creator;
+@property (nonatomic, readwrite, strong) SPSPUser *creator;
 @property (nonatomic, readwrite, copy) NSString *message;
 @property (nonatomic, readwrite, assign) __unsafe_unretained SPPlaylist *playlist;
 @property (nonatomic, readwrite) int itemIndex;
@@ -62,7 +62,7 @@
 		}
 		
 		self.dateAdded = [NSDate dateWithTimeIntervalSince1970:sp_playlist_track_create_time(self.playlist.playlist, index)];
-		self.creator = [SPUser userWithUserStruct:sp_playlist_track_creator(self.playlist.playlist, index)
+		self.creator = [SPSPUser userWithUserStruct:sp_playlist_track_creator(self.playlist.playlist, index)
 										inSession:self.playlist.session];
 		[self setUnreadFromLibSpotify:sp_playlist_track_seen(self.playlist.playlist, index)];
 		
@@ -78,7 +78,7 @@
 	self.dateAdded = date;
 }
 
--(void)setCreatorFromLibSpotify:(SPUser *)user {
+-(void)setCreatorFromLibSpotify:(SPSPUser *)user {
 	self.creator = user;
 }
 

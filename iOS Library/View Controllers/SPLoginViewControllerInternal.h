@@ -31,9 +31,9 @@
  */
 
 #import "CocoaLibSpotify.h"
-#import "SPLoginViewController.h"
+#import "SPSPLoginViewController.h"
 
-@interface SPLoginViewController (SPLoginViewControllerInternal)
+@interface SPSPLoginViewController (SPLoginViewControllerInternal)
 
 -(void)handleShowSignupPage:(sp_signup_page)page loading:(BOOL)isLoading featureMask:(NSInteger)features recentUserName:(NSString *)name;
 -(void)handleShowSignupErrorPage:(sp_signup_page)page error:(NSError *)error;

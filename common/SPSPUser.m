@@ -30,12 +30,12 @@ OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
 ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 
-#import "SPUser.h"
+#import "SPSPUser.h"
 #import "SPSession.h"
 #import "SPURLExtensions.h"
 #import "SPSessionInternal.h"
 
-@interface SPUser ()
+@interface SPSPUser ()
 
 -(BOOL)checkLoaded;
 -(void)loadUserData;
@@ -49,13 +49,13 @@ ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 @end
 
-@implementation SPUser
+@implementation SPSPUser
 
-+(SPUser *)userWithUserStruct:(sp_user *)spUser inSession:(SPSession *)aSession {
++(SPSPUser *)userWithUserStruct:(sp_user *)spUser inSession:(SPSession *)aSession {
     return [aSession userForUserStruct:spUser];
 }
 
-+(void)userWithURL:(NSURL *)userUrl inSession:(SPSession *)aSession callback:(void (^)(SPUser *user))block {
++(void)userWithURL:(NSURL *)userUrl inSession:(SPSession *)aSession callback:(void (^)(SPSPUser *user))block {
 	[aSession userForURL:userUrl callback:block];
 }
 

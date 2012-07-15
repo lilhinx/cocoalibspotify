@@ -31,7 +31,7 @@
 #import "CocoaLibSpotifyPlatformImports.h"
 
 @class SPPlaylist;
-@class SPUser;
+@class SPSPUser;
 
 @interface SPPlaylistItem : NSObject {
 	BOOL _unread;
@@ -66,7 +66,7 @@
  were collaborative, and represents the user that added the track to the
  playlist.
  */
-@property (nonatomic, readonly, strong) SPUser *creator;
+@property (nonatomic, readonly, strong) SPSPUser *creator;
 
 /** Returns the date that the item this object represents was added to the playlist. 
  

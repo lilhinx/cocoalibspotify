@@ -33,7 +33,7 @@
 -(id)initWithPlaceholderTrack:(sp_track *)track atIndex:(int)itemIndex inPlaylist:(SPPlaylist *)aPlaylist;
 
 -(void)setDateCreatedFromLibSpotify:(NSDate *)date;
--(void)setCreatorFromLibSpotify:(SPUser *)user;
+-(void)setCreatorFromLibSpotify:(SPSPUser *)user;
 -(void)setUnreadFromLibSpotify:(BOOL)unread;
 -(void)setMessageFromLibSpotify:(NSString *)msg;
 -(void)setItemIndexFromLibSpotify:(int)newIndex;

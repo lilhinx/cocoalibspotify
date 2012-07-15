@@ -37,7 +37,7 @@
 #import "SPImage.h"
 #import "SPPlaylist.h"
 #import "SPTrack.h"
-#import "SPUser.h"
+#import "SPSPUser.h"
 
 static NSString * const kArtistLoadingTestURI = @"spotify:artist:26dSoYclwsYLMAKD3tpOr4"; // Britney Spears
 static NSString * const kAlbumLoadingTestURI = @"spotify:album:50KUdiSuV2MmBmreFPl3PE"; // Barenaked Ladies Live
@@ -97,7 +97,7 @@ static NSString * const kImageLoadingTestURI = @"spotify:image:a0457147cb2972cf0
 							SPTestAssert(dispatch_get_current_queue() == dispatch_get_main_queue(), @"trackForURL callback on wrong queue.");
 							SPTestAssert(track == nil, @"Track callback with nil URL gave %@", track);
 
-							[session userForURL:nil callback:^(SPUser *user) {
+							[session userForURL:nil callback:^(SPSPUser *user) {
 								SPTestAssert(dispatch_get_current_queue() == dispatch_get_main_queue(), @"userForURL callback on wrong queue.");
 								SPTestAssert(user == nil, @"User callback with nil URL gave %@", user);
 								
@@ -145,7 +145,7 @@ static NSString * const kImageLoadingTestURI = @"spotify:image:a0457147cb2972cf0
 							SPTestAssert(dispatch_get_current_queue() == dispatch_get_main_queue(), @"trackForURL callback on wrong queue.");
 							SPTestAssert(track != nil, @"Track callback with valid URL gave nil");
 							
-							[session userForURL:[NSURL URLWithString:kUserLoadingTestURI] callback:^(SPUser *user) {
+							[session userForURL:[NSURL URLWithString:kUserLoadingTestURI] callback:^(SPSPUser *user) {
 								SPTestAssert(dispatch_get_current_queue() == dispatch_get_main_queue(), @"userForURL callback on wrong queue.");
 								SPTestAssert(user != nil, @"User callback with valid URL gave nil");
 								
@@ -189,7 +189,7 @@ static NSString * const kImageLoadingTestURI = @"spotify:image:a0457147cb2972cf0
 						SPTestAssert(dispatch_get_current_queue() == dispatch_get_main_queue(), @"trackForTrackURL callback on wrong queue.");
 						SPTestAssert(track == nil, @"Track callback with nil URL gave %@", track);
 						
-						[SPUser userWithURL:nil inSession:session callback:^(SPUser *user) {
+						[SPSPUser userWithURL:nil inSession:session callback:^(SPSPUser *user) {
 							SPTestAssert(dispatch_get_current_queue() == dispatch_get_main_queue(), @"userWithURL callback on wrong queue.");
 							SPTestAssert(user == nil, @"User callback with nil URL gave %@", user);
 							SPPassTest();
@@ -226,7 +226,7 @@ static NSString * const kImageLoadingTestURI = @"spotify:image:a0457147cb2972cf0
 						SPTestAssert(dispatch_get_current_queue() == dispatch_get_main_queue(), @"trackForURL callback on wrong queue.");
 						SPTestAssert(track != nil, @"Track callback with valid URL gave nil");
 						
-						[SPUser userWithURL:[NSURL URLWithString:kUserLoadingTestURI] inSession:session callback:^(SPUser *user) {
+						[SPSPUser userWithURL:[NSURL URLWithString:kUserLoadingTestURI] inSession:session callback:^(SPSPUser *user) {
 							SPTestAssert(dispatch_get_current_queue() == dispatch_get_main_queue(), @"userForURL callback on wrong queue.");
 							SPTestAssert(user != nil, @"User callback with valid URL gave nil");
 							SPPassTest();						

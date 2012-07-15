@@ -32,7 +32,7 @@
 
 #import "SPSessionTests.h"
 #import "SPSession.h"
-#import "SPUser.h"
+#import "SPSPUser.h"
 
 static NSString * const kTestUserNameUserDefaultsKey = @"TestUserName";
 static NSString * const kTestPasswordUserDefaultsKey = @"TestPassword";
@@ -147,7 +147,7 @@ static NSString * const kTestPasswordUserDefaultsKey = @"TestPassword";
 			
 			SPTestAssert(notLoadedUsers.count == 0, @"User loading timed out for %@", [SPSession sharedSession].user);
 			
-			SPUser *user = [SPSession sharedSession].user;
+			SPSPUser *user = [SPSession sharedSession].user;
 			SPTestAssert(user.canonicalName.length > 0, @"User has no canonical name: %@", user);
 			SPTestAssert(user.displayName.length > 0, @"User has no display name: %@", user);
 			SPTestAssert(user.spotifyURL != nil, @"User has no Spotify URI: %@", user);

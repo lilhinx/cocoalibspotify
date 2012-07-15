@@ -40,7 +40,7 @@ ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 @class SPSession;
 
-@interface SPUser : NSObject <SPAsyncLoading>
+@interface SPSPUser : NSObject <SPAsyncLoading>
 
 ///----------------------------
 /// @name Creating and Initializing Users
@@ -55,7 +55,7 @@ ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  @param aSession The SPSession the user should exist in.
  @return Returns the created SPUser object. 
  */
-+(SPUser *)userWithUserStruct:(sp_user *)spUser inSession:(SPSession *)aSession;
++(SPSPUser *)userWithUserStruct:(sp_user *)spUser inSession:(SPSession *)aSession;
 
 /** Creates an SPUser from the given Spotify user URL. 
  
@@ -69,7 +69,7 @@ ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  @param aSession The SPSession the user should exist in.
  @param block The block to be called with the created SPUser object, or `nil` if given an invalid user URL. 
  */
-+(void)userWithURL:(NSURL *)userUrl inSession:(SPSession *)aSession callback:(void (^)(SPUser *user))block;
++(void)userWithURL:(NSURL *)userUrl inSession:(SPSession *)aSession callback:(void (^)(SPSPUser *user))block;
 
 /** Initializes a new SPUser from the given opaque sp_user struct. 
  

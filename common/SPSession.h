@@ -37,7 +37,7 @@ ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 @class SPPlaylistFolder;
 @class SPPlaylistContainer;
 @class SPTrack;
-@class SPUser;
+@class SPSPUser;
 @class SPSearch;
 @class SPAlbum;
 @class SPArtist;
@@ -389,7 +389,7 @@ ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 @property (nonatomic, readonly, strong) SPPlaylist *starredPlaylist;
 
 /** Returns the current logged in user. */
-@property (nonatomic, readonly, strong) SPUser *user;
+@property (nonatomic, readonly, strong) SPSPUser *user;
 
 /** Returns an SPPlaylistContainer object that contains the user's playlists.
  
@@ -465,7 +465,7 @@ ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  @param url The URL of the user.
  @param block The block to be called with the user, or `nil` if given an invalid URL.
  */
--(void)userForURL:(NSURL *)url callback:(void (^)(SPUser *user))block;
+-(void)userForURL:(NSURL *)url callback:(void (^)(SPSPUser *user))block;
 
 /** Returns an object representation of the given Spotify URL.
 
@@ -541,7 +541,7 @@ ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  @param user The sp_user struct.
  @return Returns the created or cached SPUser object.
  */
--(SPUser *)userForUserStruct:(sp_user *)user;
+-(SPSPUser *)userForUserStruct:(sp_user *)user;
 
 ///----------------------------
 /// @name Audio Playback

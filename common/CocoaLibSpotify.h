@@ -40,7 +40,7 @@ ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #import "SPAlbum.h"
 #import "SPArtist.h"
 #import "SPImage.h"
-#import "SPUser.h"
+#import "SPSPUser.h"
 #import "SPSession.h"
 #import "SPPlaylist.h"
 #import "SPPlaylistFolder.h"
@@ -55,7 +55,7 @@ ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #import "SPUnknownPlaylist.h"
 
 #import "SPSignupViewController.h"
-#import "SPLoginViewController.h"
+#import "SPSPLoginViewController.h"
 
 #import "SPCircularBuffer.h"
 #import "SPCoreAudioController.h"

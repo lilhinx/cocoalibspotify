@@ -36,7 +36,7 @@ ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #import <Foundation/Foundation.h>
 #import "CocoaLibSpotifyPlatformImports.h"
 
-@class SPUser;
+@class SPSPUser;
 @class SPSession;
 @class SPPlaylist;
 @class SPPlaylistFolder;
@@ -62,7 +62,7 @@ ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 @property (nonatomic, readonly, getter=isLoaded) BOOL loaded;
 
 /** Returns the owner of the playlist list. */
-@property (nonatomic, readonly, strong) SPUser *owner;
+@property (nonatomic, readonly, strong) SPSPUser *owner;
 
 /** Returns an array of SPPlaylist and/or SPPlaylistFolders representing the owner's playlist list. */
 @property (nonatomic, readonly, strong) NSArray *playlists;

@@ -58,14 +58,14 @@
 		50AF4A961439CF8600E4A5EF /* SPToplist.m in Sources */ = {isa = PBXBuildFile; fileRef = 50AF4A761439CF8600E4A5EF /* SPToplist.m */; };
 		50AF4A971439CF8600E4A5EF /* SPTrack.h in Headers */ = {isa = PBXBuildFile; fileRef = 50AF4A771439CF8600E4A5EF /* SPTrack.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		50AF4A981439CF8600E4A5EF /* SPTrack.m in Sources */ = {isa = PBXBuildFile; fileRef = 50AF4A781439CF8600E4A5EF /* SPTrack.m */; };
-		50AF4A991439CF8600E4A5EF /* SPUser.h in Headers */ = {isa = PBXBuildFile; fileRef = 50AF4A791439CF8600E4A5EF /* SPUser.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		50AF4A9A1439CF8600E4A5EF /* SPUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 50AF4A7A1439CF8600E4A5EF /* SPUser.m */; };
+		50AF4A991439CF8600E4A5EF /* SPSPUser.h in Headers */ = {isa = PBXBuildFile; fileRef = 50AF4A791439CF8600E4A5EF /* SPSPUser.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		50AF4A9A1439CF8600E4A5EF /* SPSPUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 50AF4A7A1439CF8600E4A5EF /* SPSPUser.m */; };
 		50B1F18815188A6D00CB7186 /* libspotify in Frameworks */ = {isa = PBXBuildFile; fileRef = 50B1F18715188A6D00CB7186 /* libspotify */; };
 		50B1F18A15188A7200CB7186 /* api.h in Headers */ = {isa = PBXBuildFile; fileRef = 50B1F18915188A7200CB7186 /* api.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		50B1F2061518B1DA00CB7186 /* SPSignupViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 50B1F2041518B1DA00CB7186 /* SPSignupViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		50B1F2071518B1DA00CB7186 /* SPSignupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 50B1F2051518B1DA00CB7186 /* SPSignupViewController.m */; };
-		50B1F28B1518E69A00CB7186 /* SPLoginViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 50B1F2891518E69A00CB7186 /* SPLoginViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		50B1F28C1518E69A00CB7186 /* SPLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 50B1F28A1518E69A00CB7186 /* SPLoginViewController.m */; };
+		50B1F28B1518E69A00CB7186 /* SPSPLoginViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 50B1F2891518E69A00CB7186 /* SPSPLoginViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		50B1F28C1518E69A00CB7186 /* SPSPLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 50B1F28A1518E69A00CB7186 /* SPSPLoginViewController.m */; };
 		50B9D4A7156CCE3800EE1665 /* SPConcurrencyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 50B9D4A6156CCE3800EE1665 /* SPConcurrencyTests.m */; };
 		50D4F52E156BCDE800E237DD /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50D4F52D156BCDE800E237DD /* UIKit.framework */; };
 		50D4F52F156BCDE800E237DD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50AF49DF1439CBFE00E4A5EF /* Foundation.framework */; };
@@ -101,8 +101,8 @@
 		50D4F575156BCECA00E237DD /* SPSearch.m in Sources */ = {isa = PBXBuildFile; fileRef = 50AF4A721439CF8600E4A5EF /* SPSearch.m */; };
 		50D4F576156BCECA00E237DD /* SPSession.m in Sources */ = {isa = PBXBuildFile; fileRef = 50AF4A741439CF8600E4A5EF /* SPSession.m */; };
 		50D4F577156BCECA00E237DD /* SPTrack.m in Sources */ = {isa = PBXBuildFile; fileRef = 50AF4A781439CF8600E4A5EF /* SPTrack.m */; };
-		50D4F578156BCECA00E237DD /* SPUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 50AF4A7A1439CF8600E4A5EF /* SPUser.m */; };
-		50D4F579156BCED100E237DD /* SPLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 50B1F28A1518E69A00CB7186 /* SPLoginViewController.m */; };
+		50D4F578156BCECA00E237DD /* SPSPUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 50AF4A7A1439CF8600E4A5EF /* SPSPUser.m */; };
+		50D4F579156BCED100E237DD /* SPSPLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 50B1F28A1518E69A00CB7186 /* SPSPLoginViewController.m */; };
 		50D4F57A156BCED100E237DD /* SPLoginLogicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5062AEE3151DE0A900095B3C /* SPLoginLogicViewController.m */; };
 		50D4F57B156BCED100E237DD /* SPSignupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 50B1F2051518B1DA00CB7186 /* SPSignupViewController.m */; };
 		50D4F57C156BCED100E237DD /* SPFacebookPermissionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5062AEFB151E484400095B3C /* SPFacebookPermissionsViewController.m */; };
@@ -180,14 +180,14 @@
 		50AF4A761439CF8600E4A5EF /* SPToplist.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SPToplist.m; path = ../common/SPToplist.m; sourceTree = "<group>"; };
 		50AF4A771439CF8600E4A5EF /* SPTrack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SPTrack.h; path = ../common/SPTrack.h; sourceTree = "<group>"; };
 		50AF4A781439CF8600E4A5EF /* SPTrack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SPTrack.m; path = ../common/SPTrack.m; sourceTree = "<group>"; };
-		50AF4A791439CF8600E4A5EF /* SPUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SPUser.h; path = ../common/SPUser.h; sourceTree = "<group>"; };
-		50AF4A7A1439CF8600E4A5EF /* SPUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SPUser.m; path = ../common/SPUser.m; sourceTree = "<group>"; };
+		50AF4A791439CF8600E4A5EF /* SPSPUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SPSPUser.h; path = ../common/SPSPUser.h; sourceTree = "<group>"; };
+		50AF4A7A1439CF8600E4A5EF /* SPSPUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SPSPUser.m; path = ../common/SPSPUser.m; sourceTree = "<group>"; };
 		50B1F18715188A6D00CB7186 /* libspotify */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libspotify; path = "libspotify-12.1.45-iOS-universal/libspotify.framework/Versions/12.1.45/libspotify"; sourceTree = "<group>"; };
 		50B1F18915188A7200CB7186 /* api.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = api.h; path = "libspotify-12.1.45-iOS-universal/libspotify.framework/Versions/12.1.45/Headers/api.h"; sourceTree = "<group>"; };
 		50B1F2041518B1DA00CB7186 /* SPSignupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SPSignupViewController.h; path = "View Controllers/SPSignupViewController.h"; sourceTree = "<group>"; };
 		50B1F2051518B1DA00CB7186 /* SPSignupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SPSignupViewController.m; path = "View Controllers/SPSignupViewController.m"; sourceTree = "<group>"; };
-		50B1F2891518E69A00CB7186 /* SPLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SPLoginViewController.h; path = "View Controllers/SPLoginViewController.h"; sourceTree = "<group>"; };
-		50B1F28A1518E69A00CB7186 /* SPLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SPLoginViewController.m; path = "View Controllers/SPLoginViewController.m"; sourceTree = "<group>"; };
+		50B1F2891518E69A00CB7186 /* SPSPLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SPSPLoginViewController.h; path = "View Controllers/SPSPLoginViewController.h"; sourceTree = "<group>"; };
+		50B1F28A1518E69A00CB7186 /* SPSPLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SPSPLoginViewController.m; path = "View Controllers/SPSPLoginViewController.m"; sourceTree = "<group>"; };
 		50B9D4A5156CCE3800EE1665 /* SPConcurrencyTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPConcurrencyTests.h; sourceTree = "<group>"; };
 		50B9D4A6156CCE3800EE1665 /* SPConcurrencyTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPConcurrencyTests.m; sourceTree = "<group>"; };
 		50D4F52B156BCDE800E237DD /* CocoaLSTests.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CocoaLSTests.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -267,9 +267,9 @@
 		5046739A15135F6000F59AC4 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				50B1F2891518E69A00CB7186 /* SPLoginViewController.h */,
+				50B1F2891518E69A00CB7186 /* SPSPLoginViewController.h */,
 				501F7BE81521C2FB009CB9F4 /* SPLoginViewControllerInternal.h */,
-				50B1F28A1518E69A00CB7186 /* SPLoginViewController.m */,
+				50B1F28A1518E69A00CB7186 /* SPSPLoginViewController.m */,
 				5062AEE2151DE0A900095B3C /* SPLoginLogicViewController.h */,
 				5062AEE3151DE0A900095B3C /* SPLoginLogicViewController.m */,
 				50B1F2041518B1DA00CB7186 /* SPSignupViewController.h */,
@@ -399,8 +399,8 @@
 				50AF4A771439CF8600E4A5EF /* SPTrack.h */,
 				50DE7F57147E834D005403A9 /* SPTrackInternal.h */,
 				50AF4A781439CF8600E4A5EF /* SPTrack.m */,
-				50AF4A791439CF8600E4A5EF /* SPUser.h */,
-				50AF4A7A1439CF8600E4A5EF /* SPUser.m */,
+				50AF4A791439CF8600E4A5EF /* SPSPUser.h */,
+				50AF4A7A1439CF8600E4A5EF /* SPSPUser.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -507,12 +507,12 @@
 				50AF4A931439CF8600E4A5EF /* SPSession.h in Headers */,
 				50AF4A951439CF8600E4A5EF /* SPToplist.h in Headers */,
 				50AF4A971439CF8600E4A5EF /* SPTrack.h in Headers */,
-				50AF4A991439CF8600E4A5EF /* SPUser.h in Headers */,
+				50AF4A991439CF8600E4A5EF /* SPSPUser.h in Headers */,
 				50B1F18A15188A7200CB7186 /* api.h in Headers */,
 				500EC8B51439D02A00E8A60C /* CocoaLibSpotify iOS Library-Prefix.pch in Headers */,
 				50B1F2061518B1DA00CB7186 /* SPSignupViewController.h in Headers */,
 				509E6A8014DAE15E009874C9 /* SPUnknownPlaylist.h in Headers */,
-				50B1F28B1518E69A00CB7186 /* SPLoginViewController.h in Headers */,
+				50B1F28B1518E69A00CB7186 /* SPSPLoginViewController.h in Headers */,
 				509840251460442600C0FC18 /* SPCommon.h in Headers */,
 				509840291460444100C0FC18 /* SPPlaylistItem.h in Headers */,
 				5098402B1460444100C0FC18 /* SPPlaylistItemInternal.h in Headers */,
@@ -645,10 +645,10 @@
 				50AF4A941439CF8600E4A5EF /* SPSession.m in Sources */,
 				50AF4A961439CF8600E4A5EF /* SPToplist.m in Sources */,
 				50AF4A981439CF8600E4A5EF /* SPTrack.m in Sources */,
-				50AF4A9A1439CF8600E4A5EF /* SPUser.m in Sources */,
+				50AF4A9A1439CF8600E4A5EF /* SPSPUser.m in Sources */,
 				5098402A1460444100C0FC18 /* SPPlaylistItem.m in Sources */,
 				50B1F2071518B1DA00CB7186 /* SPSignupViewController.m in Sources */,
-				50B1F28C1518E69A00CB7186 /* SPLoginViewController.m in Sources */,
+				50B1F28C1518E69A00CB7186 /* SPSPLoginViewController.m in Sources */,
 				5062AEE5151DE0A900095B3C /* SPLoginLogicViewController.m in Sources */,
 				5062AEFD151E484400095B3C /* SPFacebookPermissionsViewController.m in Sources */,
 				50DBB5B915206AF900BF516F /* SPLicenseViewController.m in Sources */,
@@ -692,8 +692,8 @@
 				50D4F575156BCECA00E237DD /* SPSearch.m in Sources */,
 				50D4F576156BCECA00E237DD /* SPSession.m in Sources */,
 				50D4F577156BCECA00E237DD /* SPTrack.m in Sources */,
-				50D4F578156BCECA00E237DD /* SPUser.m in Sources */,
-				50D4F579156BCED100E237DD /* SPLoginViewController.m in Sources */,
+				50D4F578156BCECA00E237DD /* SPSPUser.m in Sources */,
+				50D4F579156BCED100E237DD /* SPSPLoginViewController.m in Sources */,
 				50D4F57A156BCED100E237DD /* SPLoginLogicViewController.m in Sources */,
 				50D4F57B156BCED100E237DD /* SPSignupViewController.m in Sources */,
 				50D4F57C156BCED100E237DD /* SPFacebookPermissionsViewController.m in Sources */,

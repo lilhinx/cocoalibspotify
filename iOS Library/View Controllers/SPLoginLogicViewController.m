@@ -139,8 +139,8 @@
 
 - (IBAction)cancel:(id)sender {
 	
-	if ([self.parentViewController isKindOfClass:[SPLoginViewController class]]) {
-		SPLoginViewController *controller = (SPLoginViewController *)self.parentViewController;
+	if ([self.parentViewController isKindOfClass:[SPSPLoginViewController class]]) {
+		SPSPLoginViewController *controller = (SPSPLoginViewController *)self.parentViewController;
 		[controller dismissLoginView:NO];
 	}
 }
